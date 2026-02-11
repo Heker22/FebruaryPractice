@@ -9,7 +9,7 @@ console.log(discountedPrice);
 
 const name = 'Matviy Holovatyi';
 
-console.log(name.length);*/
+console.log(name.length);
 
 function checkNumber(){
     const value = Number(document.getElementById('number').value);
@@ -24,4 +24,18 @@ function checkNumber(){
     else{
         result.textContent = 0;
     }
+}*/
+
+/*дз
+Написати скрипт який порахує сумму всіх парних чисел в масиві
+*/
+
+const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 14];
+
+let total = 0;
+
+for(let i = 0; i > numbers.length ; i++){
+    total = i;
 }
+
+console.log(total)
