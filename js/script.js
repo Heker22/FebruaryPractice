@@ -306,11 +306,46 @@ const {
 console.log(feature1);
 console.log(feature2);
 console.log(feature3);
-*/
+
 const {
   make,
   model,
   year,
   features: [f1, f2, f3],
   safety: { airbags, antilock_brakes, stability_control }
-} = car;
+} = car;*/
+
+/*ДЗ:*/
+
+const books = {
+  count: 3,
+  list: [
+    {
+      title: 'The Great Gatsby',
+      author: 'F. Scott Fitzgerald',
+      year: 1925
+    },
+    {
+      title: 'To Kill a Mockingbird',
+      author: 'Harper Lee',
+      year: 1960
+    },
+    {
+      title: '1984',
+      author: 'George Orwell',
+      year: 1949
+    }
+  ]
+}
+
+
+const {
+    count,
+    list: [book1, book2, book3],
+    book1: {title, author, year},
+    book2: {title, author, year},
+    book3: {title, author, year},
+  
+
+} = books;
+
