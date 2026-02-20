@@ -315,7 +315,7 @@ const {
   safety: { airbags, antilock_brakes, stability_control }
 } = car;*/
 
-/*ДЗ:*/
+/*ДЗ:
 
 const books = {
   count: 3,
@@ -341,11 +341,69 @@ const books = {
 
 const {
     count,
-    list: [book1, book2, book3],
-    book1: {title, author, year},
-    book2: {title, author, year},
-    book3: {title, author, year},
-  
+    list: [
+        {title: t1, author: a1, year: y1},
+        {title: t2, author: a2, year: y2},
+        {title: t3, author: a3, year: y3}
+    ]
 
 } = books;
 
+console.log(t1, a1, y1);
+console.log(t2, a2, y2);
+console.log(t3, a3, y3);
+
+
+
+const array1 = [1, 2, 3, 44, 4, 5, 6, 6, 7];
+const array2 = [5,12, 3, 14, 4, 5, 6, 6, 7];
+
+const finalArray = array1.concat(array2);
+
+const result = finalArray.filter((item, idx) =>
+     finalArray.indexOf(item) === idx )
+
+console.log(result)
+
+
+const people = [
+    { name: 'John', age: 32, occupation: 'programmer' },
+    { name: 'Jane', age: 26, occupation: 'teacher' },
+    { name: 'Mike', age: 42, occupation: 'engineer' },
+    { name: 'Emily', age: 17, occupation: 'designer' }
+];
+
+function selected(array) {
+
+    return array.filter(person =>
+        person.age >= 18)
+        .map(person => person.name);
+}
+
+console.log(selected(people))
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+function result(array){
+    return numbers.filter(num =>
+     num % 2 === 0)
+}
+
+console.log(result(numbers));
+
+
+const names = ['Matteo', 'Sofia', 'Gabriel', 'Franco', 'Paola'];
+
+console.log(names.includes('Matteo'));//true
+console.log(names.indexOf('Gabriel'));//2*/
+
+
+const numbers = [1, 2, 3, 4, 5];
+numbers.push(6);
+console.log(numbers);
+
+numbers.shift(1);
+console.log(numbers)
+
+const string = numbers.join();
+console.log(string)
