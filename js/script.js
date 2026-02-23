@@ -395,7 +395,7 @@ console.log(result(numbers));
 const names = ['Matteo', 'Sofia', 'Gabriel', 'Franco', 'Paola'];
 
 console.log(names.includes('Matteo'));//true
-console.log(names.indexOf('Gabriel'));//2*/
+console.log(names.indexOf('Gabriel'));//2
 
 
 const numbers = [1, 2, 3, 4, 5];
@@ -407,3 +407,70 @@ console.log(numbers)
 
 const string = numbers.join();
 console.log(string)
+
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(array.indexOf(3));
+
+const array2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const result = array2.slice(0, 5);
+console.log(result);
+*/
+
+const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+
+let string = '';
+
+/*
+for(let i = 0; i <= friends.length; i++){
+    string += friends[i]
+
+    if(i < friends.length - 1){
+        string += ', ';
+    }
+}
+
+console.log(string);
+
+
+console.log(friends.join(', '))
+
+const array3 = ['Mango', 'Poly', 'Kiwi'];
+array3.pop()
+
+console.log(array3)
+
+
+function findMaxNumber(arr) {
+
+     let max = arr[0];
+
+    for (let i = 1; i <= arr.length; i++) {
+
+        if(arr[i] > max){
+
+            max = arr[i];
+
+        }
+    }
+
+    return max;
+}
+
+let array = [1, 3, 2, 5, 4];
+let max = findMaxNumber(array);
+console.log(max); // 5 */
+
+function mul(n, m) {
+
+    return {
+
+        total: n + m,
+        difference: n - m,
+        moltiplicaton: n * m
+    }
+}
+
+const result = mul(20, 10);
+console.log(result.total);
+console.log(result.difference);
+console.log(result.moltiplicaton);
