@@ -458,7 +458,7 @@ function findMaxNumber(arr) {
 
 let array = [1, 3, 2, 5, 4];
 let max = findMaxNumber(array);
-console.log(max); // 5 */
+console.log(max); // 5 
 
 function mul(n, m) {
 
@@ -473,4 +473,73 @@ function mul(n, m) {
 const result = mul(20, 10);
 console.log(result.total);
 console.log(result.difference);
-console.log(result.moltiplicaton);
+console.log(result.moltiplicaton);*/
+/*
+class Person {
+    constructor =
+}
+const person1 = new Person('John', 'Doe'); console.log(person1.getFullName());  John Doe
+
+
+const cart = [54, 28, 105, 70, 92, 17, 120, 12, 25, 90];
+
+const total = cart.reduce((acc, product) => {
+    return acc += product;
+}, 0)
+console.log(total);
+
+let total = 0;
+
+for(let i = 0; i < cart.length; i++){
+
+    total += cart[i]
+}
+console.log(total);
+
+const fruit = ['apple', 'lemon', 'orange', 'watermelon', 'mango'];
+console.log(fruit[0]);
+
+fruit[fruit.length - 1] = 'grape';
+console.log(fruit);
+
+
+const numb = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+for (let i = 0; i < numb.length; i++) {
+
+    if (numb[i] % 2 === 0) {
+        console.log(numb[i])
+    }
+}
+
+const result = numb.filter(num => num % 2 === 0);
+console.log(result);
+
+const array = ['Mango', 'Poly', 'Kiwi', 'Matviy', 'Jack'];
+
+for( let i = 0; i < array.length; i++){
+    
+    if(array[i].length > 5){
+        console.log(array[i]);
+    }
+}
+
+const result = array.filter(arr => arr.length > 5);
+console.log(result);
+
+let number = 15;
+
+if(number > 10 && number < 20){
+    console.log('Число входить в діапазон від 10 до 20');
+}
+else{
+    console.log('Число не входить в діапазон від 10 до 20')
+}*/
+
+let word = 'Java';
+
+if(word.includes('JavaScript')){
+    console.log('Текст містить слово JavaScript')
+}
+else{
+    console.log('Текст не містить слово JavaScript')
+}
