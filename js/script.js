@@ -414,13 +414,12 @@ console.log(array.indexOf(3));
 const array2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const result = array2.slice(0, 5);
 console.log(result);
-*/
+
 
 const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
 
 let string = '';
 
-/*
 for(let i = 0; i <= friends.length; i++){
     string += friends[i]
 
@@ -533,7 +532,7 @@ if(number > 10 && number < 20){
 }
 else{
     console.log('Число не входить в діапазон від 10 до 20')
-}*/
+}
 
 let word = 'Java';
 
@@ -543,3 +542,60 @@ if(word.includes('JavaScript')){
 else{
     console.log('Текст не містить слово JavaScript')
 }
+
+
+class Rectangle {
+
+    constructor(
+        width, height
+    ){
+        this.width = width;
+        this.height = height;
+    }
+
+    getArea(){
+        return this.width * this.height;
+    }
+}
+
+const rectangle1 = new Rectangle(10, 5); 
+console.log(rectangle1.getArea());
+*/
+
+class Calculator {
+
+    constructor(){
+        
+    }
+    add(a, b){
+
+        return a + b
+    };
+
+    subtract(a, b){
+
+        return a - b
+    };
+
+    divide(a, b){
+
+        if( b === 0){
+            return 'You cant divide by 0'
+        }
+
+        return a / b
+    };
+
+    multiply(a, b){
+        return a * b
+    };
+}
+
+
+
+const calculator = new Calculator();
+ console.log(calculator.add(2, 3)); // 5
+ console.log(calculator.subtract(5, 2)); // 3
+ console.log(calculator.multiply(2, 4)); // 8
+ console.log(calculator.divide(10, 2)); // 5
+ console.log(calculator.divide(10, 0)); // На нуль ділити не можна
