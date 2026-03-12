@@ -26,6 +26,8 @@ function checkNumber(){
     }
 }*/
 
+const { createElement } = require("react");
+
 /*дз
 Написати скрипт який порахує сумму всіх парних чисел в масиві
 
@@ -596,7 +598,7 @@ glculator.add(2, 3)); // 5
  console.log(calculator.subtract(5, 2)); // 3
  console.log(calculator.multiply(2, 4)); // 8
  console.log(calculator.divide(10, 2)); // 5
- console.log(calculator.divide(10, 0)); // На нуль ділити не можна*/
+ console.log(calculator.divide(10, 0)); // На нуль ділити не можна
 
 class Animal {
     constructor(name) {
@@ -619,3 +621,106 @@ class Dog extends Animal {
 
 const myDog = new Dog('Buddy', 'Labrador Retriever');
 console.log(myDog); // { name: 'Buddy', breed: 'Labrador Retriever' }
+
+
+class Student {
+    constructor(name, grade) {
+
+        this.name = name;
+        this._grade = grade;
+    }
+
+    get info() {
+        return `Name: ${this.name}, Grade: ${this._grade}`;
+    }
+
+    set grade(value) {
+
+        if (value >= 0 && value <= 100) {
+            this._grade = value
+        } else {
+            console.log('Некоректна оцінка')
+        }
+    }
+
+}
+
+
+const student1 = new Student('Matviy', 85)
+student1.grade = 95; 
+
+console.log(student1.info)
+
+function Account({login, email}){
+
+    this.login = login;
+    this.email = email
+}
+
+Account.prototype.getInfo = function(){
+    console.log(`Login = ${this.login}, email = ${this.email}`)
+}
+
+console.log(Account.prototype.getInfo); // funzione
+
+const mango = new Account({
+login: 'Mangozedog',
+email: 'mango@dog.woof',
+});
+
+mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
+
+const poly = new Account({
+login: 'Poly',
+email: 'poly@mail.com',
+});
+
+poly.getInfo(); // Login: Poly, Email: poly@mail.com
+
+
+class Person {
+    constructor(name, age) {
+
+        this.name = name;
+        this.age = age;
+    }
+}
+
+class Employee extends Person {
+    constructor(name, age, position){
+        super(name, age);
+        this.position = position;
+    }
+
+    getInfo(){
+        return `${this.name} is a ${this.position} and is ${this.age} years old`
+    }
+}
+
+
+const john = new Employee("John", 32, "programmer");
+console.log(john.getInfo()); // "John is a programmer and is 32 years old"
+
+
+class Product {
+    constructor(name, price, discount){
+        this.name = name;
+        this.price = price, 
+        this.discount = discount
+    }
+
+    getDiscountPrice(){
+        if(this.discount){
+
+            return this.price - (this.price * this.discount / 100)
+        }
+
+        return this.price
+    }
+}
+
+
+const product1 = new Product('Telefono', 500, 10);
+console.log(product1.getDiscountPrice()); // 450*/
+
+
