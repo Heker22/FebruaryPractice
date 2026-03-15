@@ -24,11 +24,11 @@ function checkNumber(){
     else{
         result.textContent = 0;
     }
-}*/
+}
 
 const { createElement } = require("react");
 
-/*дз
+дз
 Написати скрипт який порахує сумму всіх парних чисел в масиві
 
 
@@ -723,4 +723,20 @@ class Product {
 const product1 = new Product('Telefono', 500, 10);
 console.log(product1.getDiscountPrice()); // 450*/
 
+/*дз 1
 
+const text = document.getElementById('.text');
+const button = document.getElementById('.btn');
+button.textContent = text.value
+
+
+
+дз 2
+
+const img = document.querySelector('img');
+img.src = './img/nature2.jpg'
+
+/*дз 3
+
+const list = document.querySelector('.list');
+list.firstChild.textContent = 'Hello'*/
