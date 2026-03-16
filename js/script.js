@@ -725,18 +725,56 @@ console.log(product1.getDiscountPrice()); // 450*/
 
 /*дз 1
 
-const text = document.getElementById('.text');
-const button = document.getElementById('.btn');
-button.textContent = text.value
+const text = document.getElementById('textInput');
+const button = document.getElementById('btn');
+button.addEventListener( 'click', function(){
+    button.textContent = text.value});
 
 
 
-дз 2
+/*дз 2
 
 const img = document.querySelector('img');
 img.src = './img/nature2.jpg'
 
 /*дз 3
 
-const list = document.querySelector('.list');
-list.firstChild.textContent = 'Hello'*/
+const firstItem = document.querySelector('.list li');
+firstItem.textContent = 'new'
+
+
+const list = document.querySelector('.site-nav');
+list.style.backgroundColor = 'yellow';
+
+const firstLink = document.querySelector('.site-nav a');
+firstLink.classList.add('site-nav-link');
+
+const link = document.querySelector(' a[href="https://"]');
+link.style.fontSize = '30px'
+link.style.color = 'green'
+
+*/
+
+const links = document.querySelectorAll('ul a');
+links.forEach(link => {
+    if(link.href.startsWith('http://')){
+        link.style.color = 'orange';
+    }
+})
+
+const firstLink = links[0];
+const lasttLink = links[links.length - 1];
+
+firstLink.classList.add('first-link');
+lasttLink.classList.add('last-link')
+
+const title = document.querySelector('h1');
+title.classList.add('title')
+title.classList.replace('title', 'new-title');
+title.textContent = 'Hello worlddd';
+title.style.color = 'green';
+title.style.fontSize = '30px';
+title.style.textAlign = 'center';
+
+const listLink = document.querySelector('a[name = "list"]')
+console.log(listLink.classList.contains('list'))
