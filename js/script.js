@@ -315,7 +315,9 @@ const {
   year,
   features: [f1, f2, f3],
   safety: { airbags, antilock_brakes, stability_control }
-} = car;*/
+} = car;
+
+const { createElement } = require("react");
 
 /*ДЗ:
 
@@ -753,7 +755,7 @@ const link = document.querySelector(' a[href="https://"]');
 link.style.fontSize = '30px'
 link.style.color = 'green'
 
-*/
+
 
 const links = document.querySelectorAll('ul a');
 links.forEach(link => {
@@ -778,3 +780,38 @@ title.style.textAlign = 'center';
 
 const listLink = document.querySelector('a[name = "list"]')
 console.log(listLink.classList.contains('list'))
+
+const title = document.createElement('h1');
+title.textContent = 'Привіт, це мій перший створений елемент!';
+title.classList.add('title');
+title.style.textAlign = 'center';
+title.style.color = 'red'
+document.body.appendChild(title);
+
+const list = document.createElement('ul');
+for(let i = 1; i <= 5; i++){
+    const item = document.createElement('li')
+    item.textContent = `item${i}`;
+    list.appendChild(item);
+}
+
+document.body.appendChild(list);*/
+
+
+const list = document.getElementById('ingredients');
+const ingredients = [
+  'Картопля',
+  'Гриби',
+  'Часник',
+  'Помідори',
+  'Зелень',
+  'Приправи',
+];
+
+const items = ingredients.map(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      return li
+} )
+list.append(...items);
+
