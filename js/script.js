@@ -795,7 +795,7 @@ for(let i = 1; i <= 5; i++){
     list.appendChild(item);
 }
 
-document.body.appendChild(list);*/
+document.body.appendChild(list);
 
 
 const list = document.getElementById('ingredients');
@@ -815,3 +815,68 @@ const items = ingredients.map(item => {
 } )
 list.append(...items);
 
+
+
+const input = document.getElementById('input');
+const btn = document.getElementById('btn');
+const message = document.getElementById('message');
+
+btn.addEventListener('click', () => {
+    const name = input.value;
+    message.textContent = `Hello, ${name}`
+})
+const button = document.getElementById('btn');
+/*button.addEventListener('click', function(){
+    button.style.backgroundColor = 'red';
+})
+
+const colors = ['red', 'blue', 'green', 'purple', 'yellow'];
+let index = 0;
+
+button.addEventListener('click', function(){
+    button.style.backgroundColor = colors[index];
+    index = (index+1) % colors.length;
+})
+
+
+const form = document.getElementById('form');
+const text = document.getElementById('text');
+
+form.addEventListener('submit', function(event){
+    event.preventDefault();
+    text.textContent = 'Ви зареєструвалися успішно! Дякую!'
+})
+
+const bigger = document.getElementById('bigger');
+const smaller = document.getElementById('smaller');
+const text = document.getElementById('text');
+let size = 16;
+
+bigger.addEventListener('click', function(){
+    size += 2;
+    text.style.fontSize = size + 'px';
+})
+
+smaller.addEventListener('click', function(){
+    size -= 2;
+    text.style.fontSize = size + 'px';
+})
+
+
+const background = document.getElementById('box');
+document.addEventListener('keydown', function(event){
+    if(event.key === 'y'){
+        background.style.backgroundColor = 'yellow';
+    }
+    else if(event.key === 'g'){
+        background.style.backgroundColor = 'green';
+    }
+    else if(event.key === 'r'){
+        background.style.backgroundColor = 'red';
+    }
+})*/
+
+const text = document.getElementById('text');
+document.addEventListener('keydown', function(event){
+    text.textContent = 'code:' + event.code
+})
