@@ -874,9 +874,51 @@ document.addEventListener('keydown', function(event){
     else if(event.key === 'r'){
         background.style.backgroundColor = 'red';
     }
-})*/
+})
 
 const text = document.getElementById('text');
 document.addEventListener('keydown', function(event){
     text.textContent = 'code:' + event.code
 })
+
+const json = `
+[
+{ "name": "Ivan", "age": 20, "isStudent": true },
+{ "name": "Maria", "age": 25, "isStudent": false },
+{ "name": "Petro", "age": 17, "isStudent": true }
+]`
+
+const users = JSON.parse(json);
+const students = users.filter(user => user.isStudent).map(user => user.name);
+console.log('students:', students.join(', '));
+
+const age = users.reduce((acc, user) =>
+ { return acc + Number(user.age)}, 0);
+const middleAge = age / users.length;
+console.log('Middle age:', middleAge.toFixed(2));
+console.log(typeof users[0].age)
+
+const input = document.getElementById('input');
+const save = localStorage.getItem('message-text');
+if(save){
+    input.value = save;
+}
+input.addEventListener('input', (event) => {
+    localStorage.setItem('message-text', event.target.value)
+})
+
+function fn(key, obj){
+    localStorage.setItem(key, JSON.stringify(obj));
+}
+
+function clear(){
+    localStorage.clear()
+};
+
+function result(){
+    return localStorage.length
+};*/
+
+function remove(key){
+    return localStorage.removeItem(key);
+}
