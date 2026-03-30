@@ -917,8 +917,42 @@ function clear(){
 
 function result(){
     return localStorage.length
-};*/
+};
 
 function remove(key){
     return localStorage.removeItem(key);
 }
+
+const form = document.getElementById('form');
+form.addEventListener('submit', (event) => {
+
+    event.preventDefault();
+    const name = document.getElementById('name').value
+    const age = document.getElementById('age').value
+    const email = document.getElementById('email').value
+    const user = {
+        name: name,
+        age: age,
+        email: email
+    };
+    localStorage.setItem('user-data', JSON.stringify(user));
+    alert('Your info has been saved!');
+    form.reset();
+});
+
+localStorage.clear()*/
+
+const btn = document.getElementById('btn');
+const count = document.getElementById('count');
+let countNum = localStorage.getItem('clickCount')
+countNum = countNum ? Number(countNum) : 0;
+count.textContent = countNum; 
+
+btn.addEventListener('click', () => {
+
+    countNum++ ; 
+    count.textContent = countNum;
+    localStorage.setItem('clickCount', countNum );
+})
+
+
