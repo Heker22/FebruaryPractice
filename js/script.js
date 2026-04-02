@@ -940,7 +940,7 @@ form.addEventListener('submit', (event) => {
     form.reset();
 });
 
-localStorage.clear()*/
+localStorage.clear()
 
 const btn = document.getElementById('btn');
 const count = document.getElementById('count');
@@ -956,3 +956,81 @@ btn.addEventListener('click', () => {
 })
 
 
+console.log('First log');
+
+setTimeout(() => {
+    console.log('Second log');
+}, 0 );
+
+
+console.log('Third log');
+
+const timer = setTimeout(callback, delay, arg1, arg2)
+
+const timer = setTimeout(() => {
+    console.log('Hello')}, 3000);
+
+clearTimeout(timer);
+
+const timer1 = setInterval(() => {
+    console.log('Hello')}, 3000);
+
+clearInterval(timer1);
+
+const box = document.getElementById('box');
+function getRandomColor(){
+    const colors =  ['red', 'green', 'skyblue', 'yellow', 'pink'];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+setInterval(() => {
+    box.style.backgroundColor = getRandomColor();
+}, 1000);
+
+
+let counter = 0;
+const count = document.getElementById('count');
+const stop = document.getElementById('stop');
+const interval = setInterval(() => {
+    counter++;
+    count.textContent = counter;
+}, 1000);
+count.style.textAlign = 'center';
+stop.addEventListener('click', () => {
+    clearInterval(interval);
+})
+
+
+function submit(text, delay){
+    setTimeout(() => {
+        document.getElementById('text').textContent = text;
+    }, delay);
+}
+
+document.getElementById('show').addEventListener('click', () => {
+    submit('Hello this is my message', 1000);
+})
+
+const box = document.getElementById('box');
+function big(){
+    return Math.floor(Math.random() * 200) + 50;
+}
+
+setInterval(() => {
+    const newWidth = big();
+    const newHeight = big();
+    box.style.width = newWidth + 'px';
+    box.style.height = newHeight + 'px';
+}, 4000);*/
+
+let count = 0;
+const list = document.getElementById('list');
+const interval = setInterval(() => {
+    count++;
+    const li = document.createElement('li');
+    li.textContent = 'Message' + count;
+    list.appendChild(li);
+    if(count === 5){
+        clearInterval(interval);
+    }
+}, 2000)
