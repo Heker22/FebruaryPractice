@@ -1063,17 +1063,38 @@ setInterval(() => {
     }
 
     text.textContent = texts[index];
-}, 2000);*/
+}, 2000);
 
 const title = document.getElementById('title');
 const colors = ['red', 'green', 'yellow', 'blue'];
 let index = 0;
 
 setInterval(() => {
+
+    title.style.color = colors[index];
+
     index++;
+
     if(index >= colors.length){
         index = 0;
     }
+    
+}, 1000);
+*/
 
-    title.style.color = colors
-})
+const box = document.getElementById('box');
+let position = 0;
+let size = 100;
+const interval = setInterval(() => {
+    position += 5;
+    box.style.left = position + 'px';
+    size += 5;
+    box.style.width = size + 'px';
+    box.style.height = size + 'px';
+    if(position > 150){
+        box.style.backgroundColor = 'red';
+    }
+    if( position > 500 ){
+        clearInterval(interval);
+    }
+},100);
