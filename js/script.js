@@ -1021,7 +1021,7 @@ setInterval(() => {
     const newHeight = big();
     box.style.width = newWidth + 'px';
     box.style.height = newHeight + 'px';
-}, 4000);*/
+}, 4000);
 
 let count = 0;
 const list = document.getElementById('list');
@@ -1034,3 +1034,46 @@ const interval = setInterval(() => {
         clearInterval(interval);
     }
 }, 2000)
+
+const input = document.getElementById('input');
+const btn = document.getElementById('btn');
+const text = document.getElementById('text');
+
+btn.addEventListener('click', () => {
+    const seconds = Number(input.value);
+
+    if(seconds <= 0 || isNaN(seconds) ){
+        text.textContent = 'Submit correct number!'
+        return
+    }
+    text.textContent = 'Meanwhile grab a coffee'
+    setTimeout(() => {
+        text.textContent = `${seconds} seconds passed`
+    }, seconds * 1000)
+})
+const texts = ['Hello', 'Bye', 'Whats up'];
+const text = document.getElementById('text');
+let index = 0;
+
+setInterval(() => {
+    index++;
+
+    if(index > texts.length){
+        index = 0;
+    }
+
+    text.textContent = texts[index];
+}, 2000);*/
+
+const title = document.getElementById('title');
+const colors = ['red', 'green', 'yellow', 'blue'];
+let index = 0;
+
+setInterval(() => {
+    index++;
+    if(index >= colors.length){
+        index = 0;
+    }
+
+    title.style.color = colors
+})
