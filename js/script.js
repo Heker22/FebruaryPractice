@@ -1080,7 +1080,7 @@ setInterval(() => {
     }
     
 }, 1000);
-*/
+
 
 const box = document.getElementById('box');
 let position = 0;
@@ -1097,4 +1097,23 @@ const interval = setInterval(() => {
     if( position > 500 ){
         clearInterval(interval);
     }
-},100);
+},100);*/
+
+let minutes = 1;
+let seconds = 30;
+const timer = document.getElementById('text');
+
+function updateTimer(){
+    const m = minutes.toString().padStart(2, '0');
+    const s = seconds.toString().padStart(2, '0');
+    timer.textContent = `${m} : ${s}`;
+    
+    if(minutes === 0 && seconds === 0){
+        timer.textContent = 'timer has ended!';
+        clearInterval(interval);
+        return
+    }
+
+    seconds--;
+    if()
+}
