@@ -1097,23 +1097,73 @@ const interval = setInterval(() => {
     if( position > 500 ){
         clearInterval(interval);
     }
-},100);*/
+},100);
 
-let minutes = 1;
+let minutes = 40;
 let seconds = 30;
 const timer = document.getElementById('text');
 
-function updateTimer(){
+function updateTimer() {
     const m = minutes.toString().padStart(2, '0');
     const s = seconds.toString().padStart(2, '0');
     timer.textContent = `${m} : ${s}`;
-    
-    if(minutes === 0 && seconds === 0){
+
+    if (minutes === 0 && seconds === 0) {
         timer.textContent = 'timer has ended!';
         clearInterval(interval);
         return
     }
 
     seconds--;
-    if()
+
+    if (seconds < 0){
+        seconds = 59;
+        minutes--;
+     }
 }
+
+const interval = setInterval(updateTimer, 1000);
+updateTimer()
+
+
+let time = 10000;
+const timer = document.getElementById('timer');
+const interval = setInterval(() => {
+
+    time--;
+    timer.textContent = (time / 1000).toFixed(3);
+
+    if(time <= 5000 ){
+        document.body.style.backgroundColor = 'red';
+    } 
+
+    if(time <= 0){
+        clearInterval(interval);
+        timer.textContent = 'timer has ended!';
+
+    }
+},1);
+*/
+
+const timer = document.getElementById('timer');
+const message = document.getElementById('text');
+let time = 20;
+
+const interval = setInterval(() => {
+    
+    timer.textContent = time;
+
+    if(time === 10){
+        message.textContent = 'timer has ended';
+    }
+
+    if(time === 0){
+        message.textContent = 'timer finished';
+        clearInterval(interval);
+        return
+    }
+
+    time--;
+
+}, 1000 );
+
