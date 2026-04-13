@@ -1143,7 +1143,7 @@ const interval = setInterval(() => {
 
     }
 },1);
-*/
+
 
 const timer = document.getElementById('timer');
 const message = document.getElementById('text');
@@ -1166,4 +1166,24 @@ const interval = setInterval(() => {
     time--;
 
 }, 1000 );
+*/
+
+/*ДЗ для 13/04/26*/
+
+const timer = document.getElementById('timer');
+const image = document.getElementById('img');
+let time = 15;
+
+const interval= setInterval(() => {
+    timer.textContent = time
+
+    if(time === 0){
+       image.style.display = 'block';
+       clearInterval(interval);
+       return
+    }
+
+    time--;
+},1000);
+
 
