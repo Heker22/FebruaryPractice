@@ -1168,7 +1168,7 @@ const interval = setInterval(() => {
 }, 1000 );
 */
 
-/*ДЗ для 13/04/26*/
+/*ДЗ для 13/04/26
 
 const timer = document.getElementById('timer');
 const image = document.getElementById('img');
@@ -1187,3 +1187,43 @@ const interval= setInterval(() => {
 },1000);
 
 
+
+
+const date = new Date(2026, 3, 14, 14, 45, 30, 200);
+console.log(date) //Tue Apr 14 2026 14:45:30 GMT+0200 (Ora legale dell’Europa centrale)
+
+const date = new Date();
+console.log('Date: ' + date );
+console.log(date.getDate());
+console.log(date.getDay())// 2
+console.log(date.getMonth())// 3
+console.log(date.getFullYear())// 2026
+console.log(date.getHours())// 15
+console.log(date.getMinutes())// 7
+console.log(date.getSeconds())// 15
+console.log(date.getTime())
+
+const date = new Date();
+console.log(`Час в мс з початку епохи Unix: ${date.getTime()}`);
+
+let result = 'Date: ';
+
+result += date.getFullYear() + '/';
+result += date.getMonth() + '/';
+result += date.getDate() + '. Day of week:';
+result += date.getDay() + '. ';
+
+result += 'Time: ' + date.getHours() + ':';
+result += date.getMinutes() + ':';
+result += date.getSeconds();
+
+console.log(result); //Date: 2026/3/14. Day of week:2. Time: 15:31:36
+*/
+//Set
+
+const date = new Date(2017, 6, 14, 5, 40, 0, 0);
+console.log(`2017, 6, 14, 5, 40 represents ${date.getTime()}`)//2017, 6, 14, 5, 40 represents 1500003600000;
+
+const secondDate = new Date();
+console.log(secondDate)//Tue Apr 14 2026 15:36:48 GMT+0200 (Ora legale dell’Europa centrale)
+console.log(secondDate.setFullYear(2017, 6, 4));// 1499175488222
