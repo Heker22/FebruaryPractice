@@ -1218,7 +1218,7 @@ result += date.getMinutes() + ':';
 result += date.getSeconds();
 
 console.log(result); //Date: 2026/3/14. Day of week:2. Time: 15:31:36
-*/
+
 //Set
 
 const date = new Date(2017, 6, 14, 5, 40, 0, 0);
@@ -1227,3 +1227,48 @@ console.log(`2017, 6, 14, 5, 40 represents ${date.getTime()}`)//2017, 6, 14, 5, 
 const secondDate = new Date();
 console.log(secondDate)//Tue Apr 14 2026 15:36:48 GMT+0200 (Ora legale dell’Europa centrale)
 console.log(secondDate.setFullYear(2017, 6, 4));// 1499175488222
+
+
+//16.04
+
+let date = new Date();
+
+const options = {
+    weekday: 'long',
+    year: 'numeric',
+    motnh: 'short',
+    days: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+}
+
+const locateUA = date.toLocaleString('es-IT', options);
+console.log(locateUA); //
+
+const locateUS = date.toLocaleString('en-US', options);
+console.log(locateUS)
+
+
+let start = Date.now();
+
+for(let i = 0; i < 100000; i++ ){
+    let doSmth = i*i*i;
+}
+
+let end = Date.now();
+console.log(`Time occuped ${end - start}ms`)
+
+
+
+function getYear(date){
+    return new Date(date).getFullYear()
+};
+
+console.log(getYear('2026-05-17T15:22:30'))*/
+
+function isWeekend(date){
+    const day = new Date(date).getDay();
+    return day === 0 || day === 6;
+}
+
+console.log(isWeekend('2026-05-16'));
