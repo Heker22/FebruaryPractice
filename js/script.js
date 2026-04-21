@@ -1264,11 +1264,26 @@ function getYear(date){
     return new Date(date).getFullYear()
 };
 
-console.log(getYear('2026-05-17T15:22:30'))*/
+console.log(getYear('2026-05-17T15:22:30'))
 
 function isWeekend(date){
     const day = new Date(date).getDay();
     return day === 0 || day === 6;
 }
 
-console.log(isWeekend('2026-05-16'));
+console.log(isWeekend('2026-05-16'));*/
+
+
+
+
+let start = Date.now();
+
+for(let i = 0; i < 100000; i++ ){
+    let doSmth = i*i*i;
+}
+
+let end = Date.now();
+console.log(`Time difference ${end - start}ms`)
+
+
+
