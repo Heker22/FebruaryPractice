@@ -1271,7 +1271,7 @@ function isWeekend(date){
     return day === 0 || day === 6;
 }
 
-console.log(isWeekend('2026-05-16'));*/
+console.log(isWeekend('2026-05-16'));
 
 
 
@@ -1286,4 +1286,55 @@ let end = Date.now();
 console.log(`Time difference ${end - start}ms`)
 
 
+function getSecondsToTomorrow(){
+    let today = new Date();
+    let tomorrow = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate()+1);
+    const result = tomorrow - today;
+    return Math.round(result / 1000);
+    
+}
 
+console.log(getSecondsToTomorrow())
+
+
+function getSecondsToBirthday(birthday){
+    let today = new Date();
+    let nextBirthDay = new Date(
+        today.getFullYear(),
+        birthday.getMonth(),
+        birthday.getDate()
+    );
+
+    if(nextBirthDay < today){
+        nextBirthDay.setFullYear(today.getFullYear()+1);
+    }
+    const result = nextBirthDay - today;
+    return Math.ceil(result / (1000 * 60 * 60 * 24))
+}
+
+const birthday = new Date(1997,1,20);
+console.log(getSecondsToBirthday(birthday))
+
+
+function getYears(birthday){
+    let today = new Date();
+    let age = today.getFullYear() - birthday.getFullYear();
+    let months = today.getMonth() - birthday.getMonth();
+    
+    if(months < 0 || (months === 0 && today.getDate() < birthday.getDate() )){
+        age--;
+    }
+    return age
+}
+
+const birthday = new Date(2012,8,10);
+console.log(getYears(birthday));
+
+function getDate(date){    
+    return date.getMinutes();
+}
+const now = new Date()
+console.log(getDate(now))*/
