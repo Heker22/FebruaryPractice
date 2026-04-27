@@ -1337,4 +1337,32 @@ function getDate(date){
     return date.getMinutes();
 }
 const now = new Date()
-console.log(getDate(now))*/
+console.log(getDate(now))
+
+function getDays(today1, day1){
+    let today =  new Date(today1);
+    let day = new Date(day1);
+    const getTime = Math.abs(day - today);
+    const days = Math.floor(getTime / (1000 * 60 * 60 * 24));
+    return days;
+}
+
+console.log(getDays('2026-04-27','2026-05-06'));*/
+
+function getBirthday(birthday){
+    const today = new Date();
+    const birth = new Date(birthday);
+    let age = today.getFullYear() - birth.getFullYear();
+    const month = today.getMonth() - birth.getMonth();
+    const day = today.getDate() - birth.getDate();
+
+    if(month < 0 || (month === 0 && day < 0)){
+        age--;
+    }
+
+    return age;
+};
+
+console.log(getBirthday('2012-08-10'));
+
+
