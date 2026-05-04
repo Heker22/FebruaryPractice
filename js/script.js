@@ -1467,6 +1467,23 @@ function checkNumbers(array){
 
 checkNumbers([2, 4, 6, 8, 10])
 .then((value) => {console.log(value)})
-.catch((error) => {console.log(error)});/*
+.catch((error) => {console.log(error)});*/
 
 
+
+function getImage(image){
+    return new Promise ((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => {
+            resolve(img)
+        };
+        img.onerror = () => {
+            reject('Image has not downloaded')
+        };
+        img.src = image;
+    } )  
+ }
+
+getImage('https://www.instagram.com/p/DJ6TP76I3X2/')
+.then(img => {document.body.appendChild(img)})
+.catch((error) => {console.log(error)})
