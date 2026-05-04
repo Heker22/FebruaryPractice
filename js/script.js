@@ -1416,7 +1416,7 @@ const onFetchError = error => {
 }
 
 fetchUserFromServer('Bob', onFetchSuccess, onFetchError);
-*/
+
 
 const fetchUserFromServer = username => {
     return new Promise((resolve, reject) => {
@@ -1438,3 +1438,35 @@ const fetchUserFromServer = username => {
    fetchUserFromServer("Mango")
     .then(user => console.log(user))
     .catch(error => console.error(error));
+
+
+
+function promise() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('Promise executed');
+        }, 2000);
+    })
+
+}
+
+promise().then((value) => { console.log(value) });
+
+function checkNumbers(array){
+    return new Promise((resolve,reject) => {
+        const hasOdd = array.some(numb => numb % 2 !== 0);
+
+        if(hasOdd){
+           reject('Ci sono numeri dispari ');
+        }
+        else{
+            resolve('Function executed');
+        }
+    })
+}
+
+checkNumbers([2, 4, 6, 8, 10])
+.then((value) => {console.log(value)})
+.catch((error) => {console.log(error)});/*
+
+
