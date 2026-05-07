@@ -1486,10 +1486,78 @@ function getImage(image){
 
 getImage('https://www.instagram.com/p/DJ6TP76I3X2/')
 .then(img => {document.body.appendChild(img)})
-.catch((error) => {console.log(error)})*/
+.catch((error) => {console.log(error)})
 
-function getNumbers(num1, num2){
-return new Promise((resolve, reject) => {
-    const result = num1 + num2
-})
+
+function getNumbers(numb1, numb2) {
+    return new Promise((resolve, reject) => {
+        if (typeof numb1 !== 'number' || typeof numb2 !== 'number') {
+            reject('You need to insert numbers')
+        }
+        else {
+            resolve(`Your result is ${numb1 + numb2}`);
+        }
+    })
 }
+
+getNumbers(5, 6)
+    .then(value => { console.log(value) })
+    .catch(error => { console.log(error) })
+
+function getPeople(people){
+    return new Promise((resolve, reject) => {
+        if(!Array.isArray(people)){
+            reject('Argument is an Array')
+            return
+        }
+        const names = people.map(person => person.name).sort((a, b) => a.localeCompare(b));
+        resolve(names)
+    })
+}
+
+
+
+const people = [
+    { name: "John", age: 25 },
+    { name: "Anna", age: 30 },
+    { name: "Peter", age: 40 },
+    { name: "Mary", age: 35 },
+  ];
+
+getPeople(people)
+.then(value => {console.log(value)})
+.catch(error => {console.log(error)})
+
+
+function randomPromise(){
+    return new Promise((resolve, reject) => {
+        const num = Math.random() > 0.5;
+
+        if(num){
+            resolve()
+        }
+        else{
+            reject()
+        }
+    })
+}
+
+randomPromise()
+.then(() => {console.log('Success')})
+.catch(() => {console.log('Rejected')})
+.finally(() => {console.log('Promise done')})*/
+
+
+const delay = ms => {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(ms), ms)
+    })
+};
+
+const logger = time => console.log(`Resolved after ${time}ms`);
+
+// Виклич функції для перевірки
+delay(2000).then(logger); // Resolved after 2000ms
+delay(1000).then(logger); // Resolved after 1000ms
+delay(1500).then(logger); // Resolved after 1500ms
+
