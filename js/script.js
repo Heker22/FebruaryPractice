@@ -1545,7 +1545,7 @@ function randomPromise(){
 randomPromise()
 .then(() => {console.log('Success')})
 .catch(() => {console.log('Rejected')})
-.finally(() => {console.log('Promise done')})*/
+.finally(() => {console.log('Promise done')})
 
 
 const delay = ms => {
@@ -1561,3 +1561,59 @@ delay(2000).then(logger); // Resolved after 2000ms
 delay(1000).then(logger); // Resolved after 1000ms
 delay(1500).then(logger); // Resolved after 1500ms
 
+//Promise.all - returns array
+
+const makePromise = (text, delay) => {
+   return new Promise((resolve) => {
+    setTimeout(() => resolve(text), delay)
+   });
+ }
+ const promiseA = makePromise('promiseA value', 4000)
+ const promiseB = makePromise('promiseB value', 3000)
+
+ Promise.all([promiseA, promiseB])
+.then(value => console.log(value))
+.catch(error => console.log(error));*/
+
+//Promise.race() - returns promise that comes first 
+/*
+const makePromise = (text, delay) => {
+   return new Promise((resolve) => {
+    setTimeout(() => resolve(text), delay)
+   });
+ }
+ const promiseA = makePromise('promiseA value', 1000)
+ const promiseB = makePromise('promiseB value', 3000)
+
+ Promise.race([promiseA, promiseB])
+ .then(value => console.log(value))
+ .catch(error => console.log(error));
+
+//Promise.any() - works like race but if all promises are rejected it returns error
+
+Promise.any([
+    new Promise((resolve, reject) => setTimeout(() => reject( new Error('oops!')) , 1000)),
+    new Promise((resolve, reject) => setTimeout(() => resolve(1), 2000)),
+    new Promise((resolve, reject) => setTimeout(() => resolve(3), 3000))
+]).then(alert);
+
+//Promise.allSettled = Promise.all
+
+
+Promise.any([
+    new Promise((resolve, reject) => setTimeout(() => reject( new Error('oops!')) , 3000)),
+    new Promise((resolve, reject) => setTimeout(() => reject( new Error('Error!')), 2000))
+]).catch(error => {
+    console.log(error.errors[0]);
+    console.log(error.errors[1]);
+})
+
+
+//Promise.resolve() 
+new Promise (resolve => resolve('success')).then(value => console.log(value))
+Promise.resolve('success').then(value => console.log(value));
+*/
+
+//Promise.reject()
+new Promise (resolve, reject => reject('error')).catch(error => console.log(error));
+Promise.reject('error').catch(error => console.log(error));
