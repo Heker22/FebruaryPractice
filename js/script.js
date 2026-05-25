@@ -1614,6 +1614,55 @@ new Promise (resolve => resolve('success')).then(value => console.log(value))
 Promise.resolve('success').then(value => console.log(value));
 */
 
-//Promise.reject()
+/*Promise.reject()
 new Promise (resolve, reject => reject('error')).catch(error => console.log(error));
 Promise.reject('error').catch(error => console.log(error));
+
+function delayedPromise(value, delay) {
+
+    return new Promise(function (resolve) {
+        setTimeout(function () {
+            resolve(value);
+        }, delay)
+    })
+}
+
+const promises = [
+    delayedPromise('a', 1000),
+    delayedPromise('b', 500),
+    delayedPromise('c', 600),
+    delayedPromise('d', 400),
+    delayedPromise('e', 750)
+]
+
+Promise.all(promises)
+.then(function(results){
+     console.log(results);
+})
+.catch(function(error){
+    console.log(error)
+})*/
+
+
+function randomDelay(value) {
+    return new Promise(function (resolve) {
+        const delay = Math.floor(Math.random() * 4000) + 1000;
+        setTimeout(function(){
+            resolve(value)
+        }, delay)
+    })
+}
+
+const promises = [
+    randomDelay('first'),
+    randomDelay('second'),
+    randomDelay('third'),
+    randomDelay('fourth'),
+    randomDelay('fifth')
+];
+
+Promise.race(promises)
+.then(value => console.log(value))
+.catch(error => console.log(error))
+
+
