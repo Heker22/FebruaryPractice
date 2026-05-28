@@ -1641,7 +1641,7 @@ Promise.all(promises)
 })
 .catch(function(error){
     console.log(error)
-})*/
+})
 
 
 function randomDelay(value) {
@@ -1664,5 +1664,55 @@ const promises = [
 Promise.race(promises)
 .then(value => console.log(value))
 .catch(error => console.log(error))
+*/
+/*
+const floatNumber = 12.78;
+console.log(Math.floor(floatNumber))
 
 
+
+const floatString = "45.67"
+const parsedFloat = Math.floor(floatString);
+console.log(floatString);
+
+const number = 256;
+const sqrtNumber = Math.sqrt(number);
+console.log(sqrtNumber)
+
+const randomNum = Math.round(Math.random() * 10)
+console.log(randomNum)
+
+const num = (min, max) => Math.floor(Math.random(min) * max)
+console.log(num(1, 100))
+
+const array = [2, 34, 99, 3, 22, 36, 733, 18];
+const min = Math.min(...array);
+const max = Math.max(...array);
+
+console.log(min);
+console.log(max)
+
+
+const height = 23;
+const base = 10;
+const area = height * base;
+console.log(area)
+
+const base = 4;
+const height = 3;
+const ipotenuse = Math.sqrt(Math.pow(3, 2) + Math.pow(4, 2))
+console.log(ipotenuse);
+
+const height = 10;
+const radius = 2;
+
+const volume = (Math.PI * Math.pow(radius,2)) * height;
+const result = Math.round(volume)
+console.log(result)
+*/
+
+const totalPrice = 50;
+const discount = 0.1;
+const discountedPrice = totalPrice - (totalPrice * discount);
+
+console.log(discountedPrice)
