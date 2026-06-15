@@ -1709,10 +1709,30 @@ const radius = 2;
 const volume = (Math.PI * Math.pow(radius,2)) * height;
 const result = Math.round(volume)
 console.log(result)
-*/
+
 
 const totalPrice = 50;
 const discount = 0.1;
 const discountedPrice = totalPrice - (totalPrice * discount);
 
 console.log(discountedPrice)
+
+const url = 'https://jsonplaceholder.typicode.com/users?_limit=7&_sort=name';
+const BASE_URL = 'https://jsonplaceholder.typicode.com';
+
+fetch(url)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    return response.json();
+  })
+  .then((data) => {})
+  .catch((error) => {});*/
+
+
+const headers = new Headers({
+    "Content-type": "application/json",
+    "X-Custom-Header": "custom value",
+})
+
